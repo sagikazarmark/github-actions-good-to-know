@@ -1,0 +1,16 @@
+name: 'Workflow'
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  job:
+    name: Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Default PATH
+        run: echo $PATH

@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
       - name: Default PATH
         run: echo $PATH
 
@@ -19,3 +22,6 @@ jobs:
         run: echo $DOCKER_IMAGES
         env:
           DOCKER_IMAGES: name/image
+
+      - name: Commit date
+        run: git show -s --format=%ci
